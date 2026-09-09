@@ -145,14 +145,14 @@ export default async function ServicePage(props: PageProps<"/services/[slug]">) 
 
                   <div className="mt-8 border-t border-rule pt-7">
                     <p className="text-[0.9375rem] leading-relaxed text-body">
-                      Send the property address and the violation number for a
-                      free review of this matter.
+                      Locate the public property record, then keep the notice
+                      details handy for a case review.
                     </p>
                     <Link
-                      href="/contact"
+                      href="/lookup"
                       className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-[3px] bg-ink px-5 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-ink-700"
                     >
-                      Get a free review
+                      Open public record tools
                       <ArrowRight />
                     </Link>
                   </div>

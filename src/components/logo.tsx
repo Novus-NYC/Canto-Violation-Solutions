@@ -18,8 +18,8 @@
  */
 export function LogoMark({
   className = "",
-  knockout = "#faf8f4",
-  accent = "#cf9550",
+  knockout = "#f8fbfe",
+  accent = "#87c8f4",
 }: {
   className?: string;
   knockout?: string;
@@ -62,8 +62,8 @@ export function Logo({
   return (
     <span className={`flex items-center gap-2.5 ${className}`}>
       <LogoMark
-        knockout={tone === "dark" ? "#faf8f4" : "#17150f"}
-        accent={tone === "dark" ? "#cf9550" : "#9c5d1c"}
+        knockout={tone === "dark" ? "#f8fbfe" : "#0b2e6b"}
+        accent={tone === "dark" ? "#87c8f4" : "#0b67ac"}
         className={`h-7 w-7 shrink-0 ${tone === "dark" ? "text-ink" : "text-white"}`}
       />
       <span className="flex flex-col leading-none">

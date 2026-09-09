@@ -28,7 +28,7 @@ export const faqs: FaqItem[] = [
     group: "starting",
     question: "I just received a violation. What is the first thing I should do?",
     answer:
-      "Look for a hearing date. If the notice has one, that date governs everything else and missing it is far more expensive than the original penalty. If there is no hearing date, find the agency name and the violation number at the top of the notice — those two things determine the entire correction path. Then send them over and get a straight read on what you are holding.",
+      "Look for a hearing date. If the notice has one, that date governs everything else and missing it is far more expensive than the original penalty. If there is no hearing date, find the agency name and the violation number at the top of the notice — those two things determine the entire correction path. Keep them with the property address when you look up the record or prepare for a review.",
   },
   {
     group: "starting",

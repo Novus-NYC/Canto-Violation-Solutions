@@ -16,7 +16,7 @@ export const site = {
   owner: "Nasacha Canto",
   /** LinkedIn headline, verbatim from info.md. Drives the <title> template. */
   role: "NYC DOB · ECB · OATH Violation Specialist",
-  tagline: "Clear your building violations with confidence.",
+  tagline: "Clear answers for NYC building violations.",
   description:
     "Canto Violation Solutions helps NYC property owners resolve DOB, HPD, ECB/OATH, DOT and FDNY violations, Stop Work Orders, and Local Law 152 gas piping issues — from first notice through certificate of correction.",
 
@@ -60,6 +60,7 @@ export const intakeBasis =
   "the property address and violation number for a free quote";
 
 export const nav = [
+  { href: "/lookup", label: "Public records" },
   { href: "/services", label: "Services" },
   { href: "/process", label: "How it works" },
   { href: "/about", label: "About" },

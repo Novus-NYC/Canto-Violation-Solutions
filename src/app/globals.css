@@ -3,9 +3,9 @@
 /* ==========================================================================
    Canto Violation Solutions — design tokens
 
-   Direction: modern professional. A warm neutral foundation — soft near-black
-   through to bone — carrying almost all of the design, with colour used only
-   where it means something.
+   Direction: civic and direct. The NYC public-record tools are the visual
+   reference: structured blue bands, clear white panels, and data-forward
+   controls that make a stressful process feel navigable.
 
    Token names are deliberately ROLE-BASED (`ink`, `body`, `muted`, `dim`,
    `accent`, `signal`) rather than hue-based. The palette has been revised
@@ -23,39 +23,39 @@
    ========================================================================== */
 
 @theme {
-  /* Ground — a warm near-black. Soft rather than stark. */
-  --color-ink: #17150f;
-  --color-ink-800: #221f16;
-  --color-ink-700: #2e2a22;
+  /* Ground — civic navy, informed by the NYC public-record tools. */
+  --color-ink: #0b2e6b;
+  --color-ink-800: #123f7c;
+  --color-ink-700: #24629b;
 
   /* Text */
-  --color-body: #635d51; /* 6.16:1 on paper */
-  --color-muted: #6f6859; /* 5.21:1 on paper */
-  --color-dim: #a9a08d; /* 7.04:1 on ink — muted text on dark grounds */
-  --color-dim-700: #7b7463; /* 3.60:1 on ink — recessive numerals, still legible */
+  --color-body: #344b64; /* 7.2:1 on paper */
+  --color-muted: #5c7189; /* 4.9:1 on paper */
+  --color-dim: #c9dcef; /* 9.3:1 on ink — muted text on dark grounds */
+  --color-dim-700: #91afd0; /* legible recessive numerals on ink */
 
-  /* Neutrals — bone. Warm, but kept close to paper rather than cream. */
-  --color-rule: #e6e2d9;
-  --color-rule-soft: #efece5;
-  --color-mist: #edeae1;
-  --color-paper: #faf8f4;
+  /* Neutrals — clean public-portal surfaces. */
+  --color-rule: #cddbea;
+  --color-rule-soft: #e5eef6;
+  --color-mist: #eaf3fb;
+  --color-paper: #f8fbfe;
 
   /* Signal — urgency only. Two tones, because no single red clears 4.5:1
      against both the bone paper and the ink ground. */
-  --color-signal: #c0392b; /* 5.13:1 on paper, 5.44:1 on white */
-  --color-signal-300: #e8836f; /* 6.87:1 on ink */
-  --color-signal-soft: #faeae7; /* signal on it: 4.66:1 */
+  --color-signal: #b4232a; /* urgency only */
+  --color-signal-300: #ffb3ae; /* on navy */
+  --color-signal-soft: #fff0ef;
 
-  /* Accent — bronze. Structural emphasis, never urgency. */
-  --color-accent: #9c5d1c; /* 4.95:1 on paper, white on it 5.26:1 */
-  --color-accent-300: #cf9550; /* 7.01:1 on ink */
+  /* Accent — clear DOB-style blue. Structural emphasis, never urgency. */
+  --color-accent: #0b67ac;
+  --color-accent-300: #87c8f4;
 
   /* Focus ring — clears 3:1 against BOTH grounds (paper 5.13, ink 3.36),
      so keyboard focus never disappears on a dark section. */
-  --color-focus: #c0392b;
+  --color-focus: #0b67ac;
 
   /* Confirmation — resolved / closed states */
-  --color-clear: #4a6b3a;
+  --color-clear: #207343;
 
   /* Display face is a modern grotesque, NOT a serif. Warm neutrals plus a
      high-contrast display serif is the single most over-produced look going
@@ -87,9 +87,7 @@
     text-rendering: optimizeLegibility;
   }
 
-  /* Display: Archivo, set heavy and tight. A grotesque at this weight and
-     tracking is what makes the warm palette read modern rather than
-     trad-editorial — it is doing the heavy lifting against that cliché. */
+  /* Display: Archivo is compact, legible, and keeps civic information clear. */
   h1,
   h2,
   h3 {
@@ -144,12 +142,11 @@
   }
 
   /* --- Document surface --------------------------------------------------
-     Zero-radius, hairline-ruled panels that read as paper records. Distinct
-     from interactive UI, which keeps a small consistent radius. */
+     Square, ruled panels echo a public-record interface. */
   .document {
     background-color: #fff;
     border: 1px solid var(--color-rule);
-    box-shadow: 0 1px 2px rgb(23 21 15 / 0.05);
+    box-shadow: 0 1px 2px rgb(11 46 107 / 0.08);
   }
 
   /* --- Perforated edge ---------------------------------------------------

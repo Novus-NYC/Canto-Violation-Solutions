@@ -127,8 +127,8 @@ export default function FaqPage() {
 
       <ClosingCta
         eyebrow="Still unclear"
-        title="Ask about your specific notice."
-        body="General answers only go so far. Send the property address and the violation number and get one that applies to your actual situation."
+        title="Find the public record behind your notice."
+        body="General answers only go so far. Use the City tools to locate the property record and keep the notice number close by."
       />
     </>
   );

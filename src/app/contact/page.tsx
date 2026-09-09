@@ -11,9 +11,9 @@ import {
 import { site, PLACEHOLDER } from "@/content/site";
 
 export const metadata: Metadata = {
-  title: "Get a free review",
+  title: "Prepare your review",
   description:
-    "Send the property address and violation number for a free review of your NYC building violation. Pricing follows the review, once the case is understood.",
+    "Prepare the property address, violation number and agency details needed for an NYC building-violation review.",
 };
 
 export default function ContactPage() {
@@ -22,9 +22,9 @@ export default function ContactPage() {
   return (
     <>
       <PageHero
-        eyebrow="Free review"
-        title="Clear your building violations with confidence."
-        lede="Send the property address and the violation number. You’ll get a plain-English reading of what you’re holding — and if there’s a deadline on it, you’ll hear about that first."
+        eyebrow="Prepare your review"
+        title="Start with the details on the notice."
+        lede="Gather the property address, violation number, agency and any hearing date. Online submissions will be added once the business inbox is connected."
       />
 
       <Section tone="paper">
@@ -37,7 +37,7 @@ export default function ContactPage() {
             <aside className="space-y-10">
               <Reveal delay={100}>
                 <div>
-                  <Eyebrow>Direct contact</Eyebrow>
+                  <Eyebrow>Business contact</Eyebrow>
                   <dl className="mt-6 space-y-6 border-t border-rule pt-6 text-[0.9375rem]">
                     <div>
                       <dt className="text-muted">Phone</dt>
@@ -88,30 +88,30 @@ export default function ContactPage() {
                     A hearing date on your notice is the most time-sensitive
                     thing in this whole process. Failing to appear generally
                     produces a default at a higher penalty than the original
-                    charge. Send it through as soon as you can, and say so in
-                    the form.
+                    charge. Keep that date with the rest of your notice details
+                    so it is ready when review requests are connected.
                   </p>
                 </div>
               </Reveal>
 
               <Reveal delay={200}>
                 <div>
-                  <Eyebrow>What happens next</Eyebrow>
+                  <Eyebrow>Once review requests are live</Eyebrow>
                   <ol className="mt-6 space-y-4 border-t border-rule pt-6 text-[0.9375rem] leading-relaxed text-body">
                     <li className="flex gap-4">
                       <span className="field-label pt-1 text-muted">01</span>
-                      <span>The record gets pulled and read against your notice.</span>
+                      <span>The record is reviewed against your notice.</span>
                     </li>
                     <li className="flex gap-4">
                       <span className="field-label pt-1 text-muted">02</span>
                       <span>
-                        You get told what it means and what the real deadline is.
+                        You receive a plain-English explanation and next steps.
                       </span>
                     </li>
                     <li className="flex gap-4">
                       <span className="field-label pt-1 text-muted">03</span>
                       <span>
-                        Pricing follows, based on what the matter actually needs.
+                        Pricing, where needed, follows the case review.
                       </span>
                     </li>
                   </ol>

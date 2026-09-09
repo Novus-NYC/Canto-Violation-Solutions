@@ -29,9 +29,9 @@ export const processSteps: ProcessStep[] = [
   {
     id: "review",
     label: "Review",
-    title: "Send the notice. Get a straight answer.",
+    title: "Prepare the notice for review.",
     body:
-      "You send the property address and the violation number. That is enough to pull the record and see what you are actually dealing with — which agency issued it, what was cited, whether there is a hearing date, and how much time is genuinely on the clock.",
+      "Keep the property address and violation number together. They identify the record and make it possible to see which agency issued it, what was cited and whether a hearing date is involved.",
     detail: [
       "No charge for the initial review.",
       "You get told what the notice means in plain English.",

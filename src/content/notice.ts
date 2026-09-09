@@ -53,13 +53,13 @@ export const annotations: Annotation[] = [
     id: "number",
     field: "number",
     label: "The violation number",
-    body: "The first of the two things we ask you for. It is how the record gets pulled, and it is usually printed largest on the notice.",
+    body: "Keep this number with the notice. It is how the public record is located, and it is usually printed largest on the page.",
   },
   {
     id: "premises",
     field: "premises",
     label: "The property address",
-    body: "The second. Between these two fields, the entire history of the matter can be looked up — which is why a free review needs nothing else to start.",
+    body: "Keep this with the violation number. Together, they point to the property record and its history.",
   },
   {
     id: "hearing",

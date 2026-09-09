@@ -78,8 +78,8 @@ export default function ServicesPage() {
 
       <ClosingCta
         eyebrow="Not sure which one you have"
-        title="Send it over and we’ll tell you."
-        body="If you can’t work out which agency issued your notice, that’s a normal place to start. Send the address and whatever number is printed on it."
+        title="Start with the City record."
+        body="The public portals can help locate your property and the record behind a notice. Keep the number printed on it nearby."
       />
     </>
   );

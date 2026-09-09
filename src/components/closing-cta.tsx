@@ -2,13 +2,17 @@ import { Reveal } from "@/components/reveal";
 import { ArrowRight, Button, Container, Eyebrow, Section } from "@/components/ui";
 
 export function ClosingCta({
-  eyebrow = "Free initial review",
-  title = "Send the address and the violation number.",
-  body = "That’s genuinely all it takes to find out what you’re dealing with. If there’s a deadline on your notice, you’ll hear about that first.",
+  eyebrow = "Start with the record",
+  title = "Find the property record first.",
+  body = "The City’s public tools can help you locate the property, permit and Stop Work Order information connected to your notice.",
+  href = "/lookup",
+  actionLabel = "Open public record tools",
 }: {
   eyebrow?: string;
   title?: string;
   body?: string;
+  href?: string;
+  actionLabel?: string;
 }) {
   return (
     <Section tone="mist" className="border-t border-rule">
@@ -24,8 +28,8 @@ export function ClosingCta({
                 {body}
               </p>
             </div>
-            <Button href="/contact" className="shrink-0">
-              Get a free review
+            <Button href={href} className="shrink-0">
+              {actionLabel}
               <ArrowRight />
             </Button>
           </div>

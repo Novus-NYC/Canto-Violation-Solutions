@@ -122,10 +122,10 @@ export function SiteFooter() {
                 </li>
                 <li>
                   <Link
-                    href="/contact"
+                    href="/lookup"
                     className="text-dim transition-colors hover:text-white"
                   >
-                    Get a free review
+                    Public record lookup
                   </Link>
                 </li>
               </ul>

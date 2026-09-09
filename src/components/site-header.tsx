@@ -28,13 +28,29 @@ export function SiteHeader() {
   }, [open]);
 
   return (
-    <header
-      className={`sticky top-0 z-50 border-b transition-colors duration-300 ${
-        scrolled || open
-          ? "border-rule bg-paper/92 backdrop-blur-md"
-          : "border-transparent bg-paper"
-      }`}
-    >
+    <header className="sticky top-0 z-50 shadow-[0_1px_4px_rgb(11_46_107/0.18)]">
+      <div className="bg-[#050d19] text-white">
+        <Container size="wide">
+          <div className="flex h-8 items-center justify-between text-[0.6875rem] font-semibold tracking-wide">
+            <span>NYC BUILDING COMPLIANCE</span>
+            <a
+              href="https://a810-dobnow.nyc.gov/publish/Index.html#!/"
+              target="_blank"
+              rel="noreferrer"
+              className="text-dim transition-colors hover:text-white"
+            >
+              NYC DOB NOW ↗
+            </a>
+          </div>
+        </Container>
+      </div>
+      <div
+        className={`border-b transition-colors duration-300 ${
+          scrolled || open
+            ? "border-ink-700 bg-ink/95 backdrop-blur-md"
+            : "border-ink-700 bg-ink"
+        }`}
+      >
       <Container size="wide">
         <div className="flex h-[72px] items-center justify-between gap-6">
           <Link
@@ -42,7 +58,7 @@ export function SiteHeader() {
             className="shrink-0"
             aria-label="Canto Violation Solutions — home"
           >
-            <Logo />
+            <Logo tone="light" />
           </Link>
 
           <nav
@@ -57,13 +73,13 @@ export function SiteHeader() {
                   href={item.href}
                   aria-current={active ? "page" : undefined}
                   className={`relative text-[0.9375rem] font-medium transition-colors ${
-                    active ? "text-ink" : "text-body hover:text-ink"
+                    active ? "text-white" : "text-dim hover:text-white"
                   }`}
                 >
                   {item.label}
                   {active ? (
                     <span
-                      className="absolute -bottom-1.5 left-0 h-px w-full bg-accent"
+                      className="absolute -bottom-1.5 left-0 h-0.5 w-full bg-accent-300"
                       aria-hidden="true"
                     />
                   ) : null}
@@ -74,16 +90,16 @@ export function SiteHeader() {
 
           <div className="flex items-center gap-3">
             <Link
-              href="/contact"
-              className="hidden rounded-[3px] bg-ink px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-ink-700 sm:inline-flex"
+              href="/lookup"
+              className="hidden rounded-[3px] bg-white px-5 py-2.5 text-sm font-semibold text-ink transition-colors hover:bg-mist sm:inline-flex"
             >
-              Get a free review
+              Public records
             </Link>
 
             <button
               type="button"
               onClick={() => setOpen((v) => !v)}
-              className="-mr-2 flex h-11 w-11 items-center justify-center text-ink md:hidden"
+              className="-mr-2 flex h-11 w-11 items-center justify-center text-white md:hidden"
               aria-expanded={open}
               aria-controls="mobile-nav"
               aria-label={open ? "Close menu" : "Open menu"}
@@ -104,12 +120,13 @@ export function SiteHeader() {
           </div>
         </div>
       </Container>
+      </div>
 
       {/* Mobile panel */}
       <div
         id="mobile-nav"
         hidden={!open}
-        className="border-t border-rule bg-paper md:hidden"
+        className="border-t border-ink-700 bg-ink md:hidden"
       >
         <Container size="wide">
           <nav className="flex flex-col py-3" aria-label="Primary, mobile">
@@ -118,17 +135,17 @@ export function SiteHeader() {
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="border-b border-rule-soft py-4 text-lg font-medium text-ink"
+                className="border-b border-ink-700 py-4 text-lg font-medium text-white"
               >
                 {item.label}
               </Link>
             ))}
             <Link
-              href="/contact"
+              href="/lookup"
               onClick={() => setOpen(false)}
-              className="mt-5 mb-4 inline-flex items-center justify-center rounded-[3px] bg-ink px-5 py-4 text-base font-semibold text-white"
+              className="mt-5 mb-4 inline-flex items-center justify-center rounded-[3px] bg-white px-5 py-4 text-base font-semibold text-ink"
             >
-              Get a free review
+              Public records
             </Link>
           </nav>
         </Container>

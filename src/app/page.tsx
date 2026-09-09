@@ -1,89 +1,61 @@
 import Link from "next/link";
-import { NoticeAnatomy } from "@/components/notice-anatomy";
-import { EscalationClock } from "@/components/escalation-clock";
 import { AgencyIndex } from "@/components/agency-index";
-import { AssetImage } from "@/components/asset-image";
-import { Reveal } from "@/components/reveal";
-import { ClosingCta } from "@/components/closing-cta";
 import { ArrowRight, Button, Container, Eyebrow } from "@/components/ui";
-import { processSteps } from "@/content/process";
+import { NoticeAnatomy } from "@/components/notice-anatomy";
+import { Reveal } from "@/components/reveal";
 import { site } from "@/content/site";
+
+const quickStarts = [
+  ["01", "Find your record", "Use the official DOB public tools to locate the property record."],
+  ["02", "Read the notice", "Confirm the agency, address, violation number and any hearing date."],
+  ["03", "Plan the response", "Get a clear explanation of the correction path before work begins."],
+] as const;
 
 export default function HomePage() {
   return (
     <>
-      {/* ==================================================================
-          HERO — the object, annotated.
-          Not a headline beside a card. The visitor is holding a piece of
-          paper they can't read, so the page renders that paper and reads it
-          for them, and only then asks for anything.
-          ================================================================== */}
       <section className="relative overflow-hidden bg-ink text-white">
         <div
-          className="pointer-events-none absolute inset-0"
+          className="pointer-events-none absolute inset-0 opacity-50"
           style={{
             background:
-              "radial-gradient(90% 60% at 78% 0%, #2e2a22 0%, transparent 65%)",
+              "linear-gradient(135deg, transparent 0 42%, rgb(135 200 244 / 0.18) 42% 43%, transparent 43% 100%)",
           }}
           aria-hidden="true"
         />
-
         <Container size="wide" className="relative">
-          <div className="pt-16 pb-20 sm:pt-20 sm:pb-28">
-            {/* Headline block — wide and loud, then it stops and gets out
-                of the way of the document. */}
+          <div className="py-14 sm:py-20 lg:py-24">
             <div className="max-w-4xl">
-              <p
-                className="field-label animate-rise text-signal-300"
-                style={{ animationDelay: "40ms" }}
-              >
-                NYC building violations
+              <p className="field-label animate-rise text-accent-300">
+                Canto Violation Solutions · New York City
               </p>
               <h1
-                className="animate-rise mt-6 text-[clamp(2.75rem,7.5vw,5.75rem)] text-white"
-                style={{ animationDelay: "100ms" }}
+                className="animate-rise mt-5 text-[clamp(2.8rem,7vw,5.4rem)] text-white"
+                style={{ animationDelay: "70ms" }}
               >
-                You can&rsquo;t read it.
+                NYC building violations.
                 <br />
-                <span className="text-dim">That&rsquo;s the whole problem.</span>
+                <span className="text-dim">Clear answers. A practical path forward.</span>
               </h1>
               <p
-                className="animate-rise mt-8 max-w-xl text-lg leading-relaxed text-dim sm:text-xl"
-                style={{ animationDelay: "180ms" }}
+                className="animate-rise mt-7 max-w-2xl text-lg leading-relaxed text-dim sm:text-xl"
+                style={{ animationDelay: "140ms" }}
               >
-                A city notice is written for the agency that issued it, not for
-                the person who has to answer it. Here is what one actually says
-                — and which two lines on it we need to help.
+                {site.owner} helps property owners understand notices, organize
+                the response, and move toward a clean record.
               </p>
-            </div>
-
-            {/* The document */}
-            <div
-              className="animate-rise mt-14"
-              style={{ animationDelay: "260ms" }}
-            >
-              <NoticeAnatomy />
-            </div>
-
-            {/* CTA sits UNDER the lesson, not above it */}
-            <div
-              className="animate-rise mt-16 flex flex-col gap-6 border-t border-ink-700 pt-10 sm:flex-row sm:items-center sm:justify-between"
-              style={{ animationDelay: "320ms" }}
-            >
-              <p className="max-w-md text-[1.0625rem] leading-relaxed text-dim">
-                Send those two lines and get a plain-English reading of your
-                notice, free.
-              </p>
-              <div className="flex flex-col gap-3 sm:flex-row">
-                <Button href="/contact" variant="signal">
-                  Get a free review
-                  <ArrowRight />
+              <div
+                className="animate-rise mt-9 flex flex-col gap-3 sm:flex-row"
+                style={{ animationDelay: "200ms" }}
+              >
+                <Button href="/lookup" variant="secondary">
+                  Look up a public record <ArrowRight />
                 </Button>
                 <Link
                   href="/services"
-                  className="inline-flex items-center justify-center gap-2.5 rounded-[3px] border border-ink-700 px-6 py-3.5 text-[0.9375rem] font-semibold text-white transition-colors hover:border-dim"
+                  className="inline-flex items-center justify-center gap-2.5 border border-ink-700 px-6 py-3.5 text-[0.9375rem] font-semibold text-white transition-colors hover:border-accent-300"
                 >
-                  Find your violation type
+                  See services <ArrowRight />
                 </Link>
               </div>
             </div>
@@ -91,165 +63,86 @@ export default function HomePage() {
         </Container>
       </section>
 
-      {/* ==================================================================
-          ESCALATION — one continuous line that visibly gets worse
-          ================================================================== */}
-      <EscalationClock />
+      <section className="border-b border-rule bg-white py-10 sm:py-14">
+        <Container size="wide">
+          <div className="grid gap-px border border-rule bg-rule md:grid-cols-3">
+            {quickStarts.map(([number, title, body]) => (
+              <div key={number} className="bg-white p-6 sm:p-7">
+                <p className="field-label text-accent">{number}</p>
+                <h2 className="mt-3 text-xl text-ink">{title}</h2>
+                <p className="mt-3 text-[0.9375rem] leading-relaxed text-body">{body}</p>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
 
-      {/* ==================================================================
-          THE INDEX — dense reference, not nine identical cards
-          ================================================================== */}
-      <section className="py-20 sm:py-28">
+      <section className="bg-mist py-16 sm:py-20">
         <Container size="wide">
           <Reveal>
-            <div className="flex flex-col gap-6 border-b border-rule pb-8 md:flex-row md:items-end md:justify-between">
-              <div className="max-w-2xl">
-                <Eyebrow>Everything handled</Eyebrow>
-                <h2 className="mt-5 text-[clamp(2.1rem,5vw,3.4rem)]">
-                  Find the name printed at the top.
+            <div className="grid gap-8 border-b border-rule pb-8 lg:grid-cols-[1fr_25rem] lg:items-end">
+              <div>
+                <Eyebrow>Know what you are looking at</Eyebrow>
+                <h2 className="mt-4 text-[clamp(2rem,4.8vw,3.3rem)] text-ink">
+                  The four details that matter first.
                 </h2>
               </div>
-              <p className="max-w-sm text-[0.9375rem] leading-relaxed text-body">
-                Nine matter types across five agencies. Scan for yours — the
-                hearing column is the one that decides how fast you need to
-                move.
+              <p className="text-[0.9375rem] leading-relaxed text-body">
+                Agency, violation number, property address and hearing date.
+                That is enough to begin the right conversation.
               </p>
             </div>
           </Reveal>
+          <div className="mt-10">
+            <NoticeAnatomy />
+          </div>
+        </Container>
+      </section>
 
+      <section className="py-16 sm:py-20">
+        <Container size="wide">
+          <Reveal>
+            <div className="flex flex-col gap-5 border-b border-rule pb-7 md:flex-row md:items-end md:justify-between">
+              <div>
+                <Eyebrow>Services</Eyebrow>
+                <h2 className="mt-4 text-[clamp(2rem,4.8vw,3.3rem)] text-ink">
+                  Find the name on your notice.
+                </h2>
+              </div>
+              <Link href="/services" className="font-semibold text-accent underline underline-offset-4">
+                View all services
+              </Link>
+            </div>
+          </Reveal>
           <Reveal delay={80}>
-            <div className="mt-2">
-              <AgencyIndex />
-            </div>
+            <div className="mt-2"><AgencyIndex /></div>
           </Reveal>
         </Container>
       </section>
 
-      {/* ==================================================================
-          PROCESS — a spine with a held image, not five equal boxes
-          ================================================================== */}
-      <section className="bg-ink py-20 text-white sm:py-28">
+      <section className="bg-ink py-16 text-white sm:py-20">
         <Container size="wide">
-          <div className="grid gap-14 lg:grid-cols-[minmax(0,420px)_1fr] lg:gap-20">
-            <div className="lg:sticky lg:top-28 lg:self-start">
-              <Reveal>
-                <Eyebrow tone="light">How it works</Eyebrow>
-                <h2 className="mt-5 text-[clamp(2.1rem,5vw,3.4rem)] text-white">
-                  Five stages, and the order is the hard part.
+          <Reveal>
+            <div className="grid gap-8 lg:grid-cols-[1fr_25rem] lg:items-end">
+              <div>
+                <Eyebrow tone="light">About Canto</Eyebrow>
+                <h2 className="mt-4 text-[clamp(2rem,4.8vw,3.3rem)] text-white">
+                  One NYC compliance specialist from review through closeout.
                 </h2>
-                <p className="mt-6 text-lg leading-relaxed text-dim">
-                  Doing these out of sequence is the most common reason a
-                  correction gets rejected months after the work was finished.
-                </p>
-
-                <div className="mt-10">
-                  <AssetImage
-                    id="facade-scaffolding"
-                    className="aspect-4/3 w-full opacity-90"
-                    sizes="(max-width: 1024px) 100vw, 420px"
-                  />
-                </div>
-
-                <Link
-                  href="/process"
-                  className="group mt-8 inline-flex items-center gap-2.5 text-[0.9375rem] font-semibold text-white"
-                >
-                  <span className="link-underline">See the full process</span>
-                  <ArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
-                </Link>
-              </Reveal>
-            </div>
-
-            <ol className="space-y-px">
-              {processSteps.map((step, index) => (
-                <Reveal as="li" key={step.id} delay={index * 60}>
-                  <div className="grid grid-cols-[3.5rem_1fr] gap-4 border-b border-ink-700 py-7 sm:grid-cols-[5rem_1fr] sm:gap-8">
-                    <span className="font-display text-[2rem] leading-none font-semibold text-dim-700 sm:text-[2.75rem]">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-                    <div>
-                      <h3 className="text-[1.25rem] text-white sm:text-[1.5rem]">
-                        {step.title}
-                      </h3>
-                      <p className="mt-3 max-w-xl text-[0.9375rem] leading-relaxed text-dim">
-                        {step.body}
-                      </p>
-                    </div>
-                  </div>
-                </Reveal>
-              ))}
-            </ol>
-          </div>
-        </Container>
-      </section>
-
-      {/* ==================================================================
-          WHO — an actual person, with a photograph
-          ================================================================== */}
-      <section className="py-20 sm:py-28">
-        <Container size="wide">
-          <div className="grid gap-12 lg:grid-cols-[320px_1fr] lg:gap-20">
-            <Reveal>
-              <AssetImage
-                id="owner-portrait"
-                className="aspect-4/5 w-full"
-                sizes="(max-width: 1024px) 100vw, 320px"
-              />
-            </Reveal>
-
-            <Reveal delay={100}>
-              <Eyebrow>Who you would be working with</Eyebrow>
-              <h2 className="mt-5 max-w-2xl text-[clamp(2.1rem,5vw,3.4rem)]">
-                One specialist, handling the whole matter.
-              </h2>
-              <p className="mt-6 max-w-xl text-lg leading-relaxed text-body">
-                {site.name} is run by {site.owner}, from {site.basedIn}. The
-                person who reads your notice is the person who files the
-                correction and appears at the hearing.
-              </p>
-
-              <dl className="mt-12 grid gap-x-12 gap-y-8 sm:grid-cols-2">
-                {[
-                  {
-                    t: "Deadlines surface first",
-                    d: "If your notice carries a hearing date, that is the first thing you are told — before scope, before pricing.",
-                  },
-                  {
-                    t: "No outcome is promised",
-                    d: "Whether a violation can be reduced or dismissed depends on facts nobody can assess without reading the record.",
-                  },
-                  {
-                    t: "Priced per case, after review",
-                    d: "A paperwork correction and a full permit resolution are not the same job, so they are not the same number.",
-                  },
-                  {
-                    t: "Closed means closed",
-                    d: "A submitted filing is not a resolved violation. You are told when the record is genuinely clear.",
-                  },
-                ].map((item) => (
-                  <div key={item.t} className="border-t border-rule pt-5">
-                    <dt className="text-[1.0625rem] font-semibold tracking-[-0.02em]">
-                      {item.t}
-                    </dt>
-                    <dd className="mt-2.5 text-[0.9375rem] leading-relaxed text-body">
-                      {item.d}
-                    </dd>
-                  </div>
-                ))}
-              </dl>
-
-              <div className="mt-12">
-                <Button href="/about" variant="secondary">
-                  About {site.owner.split(" ")[0]}
-                  <ArrowRight />
-                </Button>
               </div>
-            </Reveal>
-          </div>
+              <div>
+                <p className="text-[1.0625rem] leading-relaxed text-dim">
+                  More than a decade across construction management, DOB filings,
+                  permitting and violation resolution.
+                </p>
+                <Link href="/about" className="mt-5 inline-flex items-center gap-2 font-semibold text-white underline decoration-accent-300 decoration-2 underline-offset-4">
+                  Meet {site.owner.split(" ")[0]} <ArrowRight />
+                </Link>
+              </div>
+            </div>
+          </Reveal>
         </Container>
       </section>
-
-      <ClosingCta />
     </>
   );
 }

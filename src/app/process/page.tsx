@@ -117,8 +117,8 @@ export default function ProcessPage() {
 
       <ClosingCta
         eyebrow="Stage one"
-        title="It starts with a free review."
-        body="Send the property address and the violation number. Nothing is quoted, and nothing is owed, until you know what the matter actually involves."
+        title="It starts with the property record."
+        body="Locate the address and notice number in the City’s public tools, then keep those details together for the review process."
       />
     </>
   );

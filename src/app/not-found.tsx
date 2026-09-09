@@ -23,10 +23,10 @@ export default function NotFound() {
               <ArrowRight />
             </Button>
             <Link
-              href="/contact"
+              href="/lookup"
               className="inline-flex items-center justify-center gap-2.5 rounded-[3px] border border-ink-700 px-6 py-3.5 text-[0.9375rem] font-semibold text-white transition-colors hover:border-dim"
             >
-              Get a free review
+              Public record lookup
             </Link>
           </div>
 
