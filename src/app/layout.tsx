@@ -4,6 +4,7 @@ import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { site } from "@/content/site";
+import { Analytics } from "@vercel/analytics/next";
 
 /**
  * Type pairing:
@@ -88,6 +89,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           {children}
         </main>
         <SiteFooter />
+        <Analytics />
       </body>
     </html>
   );
