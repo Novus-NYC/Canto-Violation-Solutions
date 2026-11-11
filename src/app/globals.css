@@ -3,56 +3,36 @@
 /* ==========================================================================
    Canto Violation Solutions — design tokens
 
-   Direction: civic and direct. The NYC public-record tools are the visual
-   reference: structured blue bands, clear white panels, and data-forward
-   controls that make a stressful process feel navigable.
-
-   Token names are deliberately ROLE-BASED (`ink`, `body`, `muted`, `dim`,
-   `accent`, `signal`) rather than hue-based. The palette has been revised
-   more than once; naming by job rather than by colour means the next
-   revision is an edit to this block alone and nothing else.
-
-   Usage rules, enforced by the component API rather than by memory:
-     · `signal` (red)  — urgency ONLY. Deadlines, hearing dates, errors,
-                         placeholder markers. Never decoration.
-     · `accent` (bronze) — quiet structural/brand emphasis. Never urgency,
-                         so the two warm colours can never be confused.
-     · Primary actions stay `ink`, so colour never competes with the CTA.
-
-   Every value below is measured, not eyeballed; ratios are noted inline.
+   Deep evergreen for headings, heroes, and primary actions. Ivory for
+   page surfaces. Charcoal for body copy and the utility bar and footer.
+   Sage accents provide emphasis and red signals urgency.
    ========================================================================== */
 
 @theme {
-  /* Ground — civic navy, informed by the NYC public-record tools. */
-  --color-ink: #0b2e6b;
-  --color-ink-800: #123f7c;
-  --color-ink-700: #24629b;
+  --color-ink: #12361a;
+  --color-ink-700: #45634c;
 
   /* Text */
-  --color-body: #344b64; /* 7.2:1 on paper */
-  --color-muted: #5c7189; /* 4.9:1 on paper */
-  --color-dim: #c9dcef; /* 9.3:1 on ink — muted text on dark grounds */
-  --color-dim-700: #91afd0; /* legible recessive numerals on ink */
+  --color-body: #252d28;
+  --color-muted: #515d53;
+  --color-dim: #d5dfd1;
 
-  /* Neutrals — clean public-portal surfaces. */
-  --color-rule: #cddbea;
-  --color-rule-soft: #e5eef6;
-  --color-mist: #eaf3fb;
-  --color-paper: #f8fbfe;
+  /* Surfaces and dividers */
+  --color-rule: #cdd5ca;
+  --color-rule-soft: #e2e6dd;
+  --color-mist: #e9ede5;
+  --color-paper: #f7f5ef;
 
-  /* Signal — urgency only. Two tones, because no single red clears 4.5:1
-     against both the bone paper and the ink ground. */
-  --color-signal: #b4232a; /* urgency only */
-  --color-signal-300: #ffb3ae; /* on navy */
+  /* Urgency on light and dark surfaces */
+  --color-signal: #b4232a;
+  --color-signal-300: #ffb3ae;
   --color-signal-soft: #fff0ef;
 
-  /* Accent — clear DOB-style blue. Structural emphasis, never urgency. */
-  --color-accent: #0b67ac;
-  --color-accent-300: #87c8f4;
+  --color-accent: #386146;
+  --color-accent-300: #b5c9ad;
 
-  /* Focus ring — clears 3:1 against BOTH grounds (paper 5.13, ink 3.36),
-     so keyboard focus never disappears on a dark section. */
-  --color-focus: #0b67ac;
+  /* Focus ring clears 3:1 on ivory, sage, evergreen, and charcoal. */
+  --color-focus: #70816c;
 
   /* Confirmation — resolved / closed states */
   --color-clear: #207343;
@@ -146,7 +126,7 @@
   .document {
     background-color: #fff;
     border: 1px solid var(--color-rule);
-    box-shadow: 0 1px 2px rgb(11 46 107 / 0.08);
+    box-shadow: 0 1px 2px color-mix(in srgb, var(--color-body) 8%, transparent);
   }
 
   /* --- Perforated edge ---------------------------------------------------

@@ -59,8 +59,8 @@ export function NoticeAnatomy() {
                 }}
                 className={`field-label pb-1 transition-colors ${
                   selected
-                    ? "border-b border-signal-300 text-white"
-                    : "border-b border-transparent text-dim hover:text-white"
+                    ? "border-b border-accent text-ink"
+                    : "border-b border-transparent text-muted hover:text-ink"
                 }`}
               >
                 {n.tab}
@@ -76,7 +76,7 @@ export function NoticeAnatomy() {
           className="animate-fade relative"
         >
           {/* The sheet */}
-          <article className="relative bg-white text-ink shadow-[0_24px_60px_-20px_rgb(0_0_0/0.55)]">
+          <article className="relative bg-white text-ink shadow-[0_24px_60px_-20px] shadow-body/25">
             <div className="perforated-top h-2 text-white" aria-hidden="true" />
 
             {/* Masthead */}
@@ -102,12 +102,9 @@ export function NoticeAnatomy() {
                   <div
                     key={f.id}
                     data-field={f.id}
-                    // Conditional, never additive: emitting both `bg-white`
-                    // and `bg-signal-soft` lets stylesheet order decide the
-                    // winner rather than the state.
                     className={`relative px-6 py-4 transition-colors duration-200 sm:px-8 ${
                       f.wide ? "col-span-2" : ""
-                    } ${isActive ? "bg-signal-soft" : "bg-white"}`}
+                    } ${isActive ? "bg-mist" : "bg-white"}`}
                   >
                     <div className="flex items-center gap-2">
                       {annotated ? (
@@ -115,7 +112,7 @@ export function NoticeAnatomy() {
                           aria-hidden="true"
                           className={`flex h-4 w-4 shrink-0 items-center justify-center rounded-full font-mono text-[0.5625rem] font-semibold transition-colors ${
                             isActive
-                              ? "bg-signal text-white"
+                              ? "bg-accent text-white"
                               : "bg-ink text-white"
                           }`}
                         >
@@ -151,7 +148,7 @@ export function NoticeAnatomy() {
           </article>
         </div>
 
-        <p className="mt-4 font-mono text-[0.6875rem] tracking-wider text-dim uppercase">
+        <p className="mt-4 font-mono text-[0.6875rem] tracking-wider text-muted uppercase">
           Illustration — not a real notice. No genuine case data shown.
         </p>
       </div>
@@ -160,7 +157,7 @@ export function NoticeAnatomy() {
       {/* The annotations                                                   */}
       {/* ---------------------------------------------------------------- */}
       <div className="lg:pt-11">
-        <p className="field-label mb-5 text-dim">How to read it</p>
+        <p className="field-label mb-5 text-muted">How to read it</p>
 
         <ul className="space-y-px">
           {annotations.map((a, i) => (
@@ -173,26 +170,26 @@ export function NoticeAnatomy() {
                 onBlur={() => setActive(null)}
                 className={`group w-full border-l-2 py-3.5 pl-4 text-left transition-colors ${
                   active === a.field
-                    ? "border-signal-300 bg-white/5"
-                    : "border-ink-700 hover:border-dim"
+                    ? "border-accent bg-paper"
+                    : "border-rule hover:border-accent"
                 }`}
               >
                 <span className="flex items-baseline gap-2.5">
                   <span
                     aria-hidden="true"
-                    className="font-mono text-[0.625rem] font-semibold text-signal-300"
+                    className="font-mono text-[0.625rem] font-semibold text-accent"
                   >
                     {i + 1}
                   </span>
                   <span
                     className={`text-[0.9375rem] font-semibold ${
-                      a.urgent ? "text-signal-300" : "text-white"
+                      a.urgent ? "text-signal" : "text-ink"
                     }`}
                   >
                     {a.label}
                   </span>
                 </span>
-                <span className="mt-1.5 block text-[0.8125rem] leading-relaxed text-dim">
+                <span className="mt-1.5 block text-[0.8125rem] leading-relaxed text-body">
                   {a.body}
                 </span>
               </button>
@@ -202,7 +199,7 @@ export function NoticeAnatomy() {
 
         <Link
           href={`/services/${sample.slug}`}
-          className="group mt-7 inline-flex items-center gap-2 text-[0.9375rem] font-semibold text-white"
+          className="group mt-7 inline-flex items-center gap-2 text-[0.9375rem] font-semibold text-accent hover:text-ink"
         >
           <span className="link-underline">What to do about {sample.code}</span>
           <ArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />

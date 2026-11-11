@@ -10,12 +10,14 @@ export function SiteFooter() {
   const { contact } = site;
 
   return (
-    <footer className="bg-ink text-mist">
+    <footer className="bg-body text-mist">
       <Container size="wide">
         <div className="grid gap-14 py-16 sm:py-20 lg:grid-cols-[1.15fr_1fr_1fr] lg:gap-10">
           {/* Identity */}
           <div className="max-w-sm">
-            <Logo tone="light" />
+            <div className="inline-flex bg-paper px-3 py-2">
+              <Logo className="w-48" />
+            </div>
             <p className="mt-6 text-[0.9375rem] leading-relaxed text-dim">
               Helping New York City property owners resolve building violations
               — from the first notice through the certificate of correction.

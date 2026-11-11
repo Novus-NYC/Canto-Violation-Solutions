@@ -35,29 +35,18 @@ anything once it has already been useful.
 
 ### Visual direction
 
-Modern professional. A warm neutral foundation — soft near-black through to
-bone — carries almost all of the design, with colour used only where it means
-something.
+Deep evergreen, ivory, and charcoal form the Canto palette. The header and
+footer use the supplied Canto wordmark on ivory.
 
 | Token | Value | Role |
 |---|---|---|
-| `ink` / `ink-800` / `ink-700` | `#17150f` `#221f16` `#2e2a22` | Dark ground — a warm near-black, soft rather than stark |
-| `body` | `#635d51` | Body text (6.16:1 on paper) |
-| `muted` | `#6f6859` | Secondary text on light (5.21:1) |
-| `dim` | `#a9a08d` | Secondary text on dark (7.04:1 on ink) |
-| `rule` / `mist` / `paper` | `#e6e2d9` `#edeae1` `#faf8f4` | Bone. Warm, but kept close to paper rather than cream |
-| `signal` / `signal-300` | `#c0392b` `#e8836f` | **Urgency only** — deadlines, hearing dates, errors |
-| `accent` / `accent-300` | `#9c5d1c` `#cf9550` | Bronze. Quiet structural emphasis, **never** urgency |
-| `focus` | `#c0392b` | Focus ring — clears 3:1 on both grounds |
-
-**Token names are role-based, not hue-based.** The palette has been revised more
-than once; naming by job (`ink`, `body`, `muted`, `accent`) rather than by colour
-means the next revision is an edit to the `@theme` block alone.
-
-**Two warm colours, strictly separated.** `signal` means urgency and nothing
-else; `accent` means structural emphasis and never urgency. Primary actions stay
-`ink`, so colour never competes with the CTA. `Eyebrow` enforces the light/dark
-split with a `signalOnDark` variant rather than leaving it to memory.
+| `ink` / `ink-700` | `#12361a` `#45634c` | Evergreen for headings, heroes, and primary actions |
+| `body` | `#252d28` | Charcoal for body copy, the utility bar, and the footer |
+| `muted` / `dim` | `#515d53` `#d5dfd1` | Secondary text on light and dark surfaces |
+| `rule` / `mist` / `paper` | `#cdd5ca` `#e9ede5` `#f7f5ef` | Dividers, pale sage panels, and ivory pages |
+| `signal` / `signal-300` | `#b4232a` `#ffb3ae` | Urgent information on light and dark surfaces |
+| `accent` / `accent-300` | `#386146` `#b5c9ad` | Links and structural emphasis on light and dark surfaces |
+| `focus` | `#70816c` | Keyboard focus ring |
 
 **Type.** Archivo for display, set heavy (620) and tight (`-0.035em`); Public
 Sans for body — the U.S. Web Design System typeface, on-subject for a civic

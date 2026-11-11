@@ -5,9 +5,8 @@
  * LinkedIn photo is an explicit AI-generated placeholder, and as a service
  * business there is no storefront or product photography to draw on.
  *
- * So every image on this site is a locally-generated SVG placeholder in
- * /public/media. Nothing loads from an external CDN. Each entry below records
- * what the real photograph should be, so the owner can be briefed precisely.
+ * The photography placeholders are local SVGs in /public/media. Each entry
+ * records what the real photograph should be, so the owner can be briefed.
  *
  * This manifest is also rendered as a human-readable checklist at
  * ASSETS-NEEDED.md in the repo root, and each usage site carries a
@@ -87,17 +86,6 @@ export const mediaAssets: MediaAsset[] = [
     brief:
       "A photograph of an actual notice of violation — REDACTED. Every address, name, BIN, and violation number must be blacked out or blurred before use, and it must not be a live client’s document. The purpose is texture and recognition: a visitor should recognize the shape of the paper in their own hand. If no safe document is available, keep the generated placeholder.",
     priority: "nice-to-have",
-  },
-  {
-    id: "logo-mark",
-    src: "/media/logo-mark.svg",
-    width: 512,
-    height: 512,
-    alt: "Canto Violation Solutions",
-    usedOn: "Header, footer, favicon, Open Graph",
-    brief:
-      "There is no confirmed logo — info.md could not view the Google Sites header image due to bot detection, so it was never described. The current mark is an original wordmark-and-monogram built for this site. If the owner has existing branding, supply it; if not, this can be developed further. Needed as SVG plus a square PNG for social.",
-    priority: "critical",
   },
 ];
 

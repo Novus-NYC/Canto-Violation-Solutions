@@ -25,7 +25,7 @@ browser console on any page to dump the shot list for that page:
 
 ## 1. Photography to request from the owner
 
-Every image is currently a locally-generated SVG placeholder in `public/media/`.
+The photography placeholders are SVGs in `public/media/`.
 Nothing loads from an external CDN. To swap in a real photo, drop the file into
 `public/media/` and change one `src` in `src/content/media.ts` — the alt text is
 already written for the real image.
@@ -39,13 +39,6 @@ or softly blurred background, chest-up. Professional but warm — approachable
 rather than corporate-stiff, since the entire brand goal is that someone who
 just received a violation feels comfortable reaching out. Avoid a hard studio
 white background.
-
-**`logo-mark`** · header, footer, favicon, social sharing · square SVG + PNG
-There is no confirmed logo. `info.md` could not view the Google Sites header
-image (bot detection blocked it) and so never described it. The mark currently
-in use is **original work created for this site**, not a reproduction of
-anything existing. If the owner has existing branding, supply it. If not, this
-mark can be developed further.
 
 ### HIGH — meaningfully improves credibility
 

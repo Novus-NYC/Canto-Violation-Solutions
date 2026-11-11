@@ -14,12 +14,12 @@ const quickStarts = [
 export default function HomePage() {
   return (
     <>
-      <section className="relative overflow-hidden bg-ink text-white">
+      <section className="relative overflow-hidden bg-ink text-paper">
         <div
           className="pointer-events-none absolute inset-0 opacity-50"
           style={{
             background:
-              "linear-gradient(135deg, transparent 0 42%, rgb(135 200 244 / 0.18) 42% 43%, transparent 43% 100%)",
+              "linear-gradient(135deg, transparent 0 42%, color-mix(in srgb, var(--color-accent-300) 18%, transparent) 42% 43%, transparent 43% 100%)",
           }}
           aria-hidden="true"
         />
@@ -30,7 +30,7 @@ export default function HomePage() {
                 Canto Violation Solutions · New York City
               </p>
               <h1
-                className="animate-rise mt-5 text-[clamp(2.8rem,7vw,5.4rem)] text-white"
+                className="animate-rise mt-5 text-[clamp(2.8rem,7vw,5.4rem)] text-paper"
                 style={{ animationDelay: "70ms" }}
               >
                 NYC building violations.
@@ -53,7 +53,7 @@ export default function HomePage() {
                 </Button>
                 <Link
                   href="/services"
-                  className="inline-flex items-center justify-center gap-2.5 border border-ink-700 px-6 py-3.5 text-[0.9375rem] font-semibold text-white transition-colors hover:border-accent-300"
+                  className="inline-flex items-center justify-center gap-2.5 border border-focus px-6 py-3.5 text-[0.9375rem] font-semibold text-paper transition-colors hover:border-accent-300"
                 >
                   See services <ArrowRight />
                 </Link>

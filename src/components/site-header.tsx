@@ -28,8 +28,8 @@ export function SiteHeader() {
   }, [open]);
 
   return (
-    <header className="sticky top-0 z-50 shadow-[0_1px_4px_rgb(11_46_107/0.18)]">
-      <div className="bg-[#050d19] text-white">
+    <header className="sticky top-0 z-50 shadow-sm shadow-body/15">
+      <div className="bg-body text-paper">
         <Container size="wide">
           <div className="flex h-8 items-center justify-between text-[0.6875rem] font-semibold tracking-wide">
             <span>NYC BUILDING COMPLIANCE</span>
@@ -37,7 +37,7 @@ export function SiteHeader() {
               href="https://a810-dobnow.nyc.gov/publish/Index.html#!/"
               target="_blank"
               rel="noreferrer"
-              className="text-dim transition-colors hover:text-white"
+              className="text-dim transition-colors hover:text-paper"
             >
               NYC DOB NOW ↗
             </a>
@@ -45,24 +45,24 @@ export function SiteHeader() {
         </Container>
       </div>
       <div
-        className={`border-b transition-colors duration-300 ${
+        className={`border-b border-rule transition-colors duration-300 ${
           scrolled || open
-            ? "border-ink-700 bg-ink/95 backdrop-blur-md"
-            : "border-ink-700 bg-ink"
+            ? "bg-paper/95 backdrop-blur-md"
+            : "bg-paper"
         }`}
       >
       <Container size="wide">
-        <div className="flex h-[72px] items-center justify-between gap-6">
+        <div className="flex h-[72px] items-center justify-between gap-3 lg:gap-6">
           <Link
             href="/"
             className="shrink-0"
             aria-label="Canto Violation Solutions — home"
           >
-            <Logo tone="light" />
+            <Logo alt="" className="w-40 lg:w-44" />
           </Link>
 
           <nav
-            className="hidden items-center gap-9 md:flex"
+            className="hidden items-center gap-3 md:flex lg:gap-9"
             aria-label="Primary"
           >
             {nav.map((item) => {
@@ -73,13 +73,13 @@ export function SiteHeader() {
                   href={item.href}
                   aria-current={active ? "page" : undefined}
                   className={`relative text-[0.9375rem] font-medium transition-colors ${
-                    active ? "text-white" : "text-dim hover:text-white"
+                    active ? "text-ink" : "text-body hover:text-accent"
                   }`}
                 >
                   {item.label}
                   {active ? (
                     <span
-                      className="absolute -bottom-1.5 left-0 h-0.5 w-full bg-accent-300"
+                      className="absolute -bottom-1.5 left-0 h-0.5 w-full bg-accent"
                       aria-hidden="true"
                     />
                   ) : null}
@@ -91,7 +91,7 @@ export function SiteHeader() {
           <div className="flex items-center gap-3">
             <Link
               href="/lookup"
-              className="hidden rounded-[3px] bg-white px-5 py-2.5 text-sm font-semibold text-ink transition-colors hover:bg-mist sm:inline-flex"
+              className="hidden rounded-[3px] bg-ink px-5 py-2.5 text-sm font-semibold text-paper transition-colors hover:bg-ink-700 sm:inline-flex"
             >
               Public records
             </Link>
@@ -99,7 +99,7 @@ export function SiteHeader() {
             <button
               type="button"
               onClick={() => setOpen((v) => !v)}
-              className="-mr-2 flex h-11 w-11 items-center justify-center text-white md:hidden"
+              className="-mr-2 flex h-11 w-11 items-center justify-center text-ink md:hidden"
               aria-expanded={open}
               aria-controls="mobile-nav"
               aria-label={open ? "Close menu" : "Open menu"}
@@ -126,7 +126,7 @@ export function SiteHeader() {
       <div
         id="mobile-nav"
         hidden={!open}
-        className="border-t border-ink-700 bg-ink md:hidden"
+        className="bg-paper md:hidden"
       >
         <Container size="wide">
           <nav className="flex flex-col py-3" aria-label="Primary, mobile">
@@ -135,7 +135,7 @@ export function SiteHeader() {
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="border-b border-ink-700 py-4 text-lg font-medium text-white"
+                className="border-b border-rule py-4 text-lg font-medium text-ink"
               >
                 {item.label}
               </Link>
@@ -143,7 +143,7 @@ export function SiteHeader() {
             <Link
               href="/lookup"
               onClick={() => setOpen(false)}
-              className="mt-5 mb-4 inline-flex items-center justify-center rounded-[3px] bg-white px-5 py-4 text-base font-semibold text-ink"
+              className="mt-5 mb-4 inline-flex items-center justify-center rounded-[3px] bg-ink px-5 py-4 text-base font-semibold text-paper"
             >
               Public records
             </Link>
